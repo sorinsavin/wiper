@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-6">
+  	<div class="thumbnail">
+  		
+  	<%= image_tag @listing.image.url %>
+</div>
+</div>
+<div class="col-md-6">
+	<h3>Denumire: </h3>
+		<p><strong><%= @listing.denumire %></strong></p>
+		
+	<p><strong>Cod:</strong> <%= @listing.code %></p>
+	
+	<p> <p><strong>Marca: </strong><%= @listing.marca %></p>
+	<p><p><strong>Model: </strong><%= @listing.model %></p>
+	<p><p><strong>An Fabricatie: </strong><%= @listing.anfabricatie %></p>
+	<p><p><strong>Dimensiune: </strong><%= @listing.dimensiune %></p>
+	<p> <p><strong>Pret: </strong><%= @listing.price %></p>
+	<p> <p><strong>Tip Adaptor: </strong> <%= @listing.tipadpt %></p>
+
+</div>
+
+
+<%= link_to 'Edit', edit_listing_path(@listing), class: "btn btn-link" %> |
+<%= link_to 'Back', listings_path, class: "btn btn-link" %>

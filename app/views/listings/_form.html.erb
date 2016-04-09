@@ -1,0 +1,53 @@
+<%= form_for(@listing,html: { multipart: true }) do |f| %>
+  <% if @listing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
+
+      <ul>
+      <% @listing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :code %><br>
+    <%= f.text_area :code, class: "form-control"%>
+  </div>
+<div class="form-group">
+    <%= f.label :marca %><br>
+    <%= f.text_area :marca, class: "form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :model %><br>
+    <%= f.text_area :model, class: "form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :anfabricatie %><br>
+    <%= f.text_field :anfabricatie, class: "form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :denumire %><br>
+    <%= f.text_area :denumire, class: "form-control"%>
+  </div>
+ <div class="form-group">
+    <%= f.label :dimensiune %><br>
+    <%= f.text_area :dimensiune, class: "form-control"%>
+  </div>
+<div class="form-group">
+    <%= f.label :tipadpt %><br>
+    <%= f.text_area :tipadpt, class: "form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :price %><br>
+    <%= f.text_field :price, class: "form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :image %><br>
+    <%= f.file_field :image, class: "form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

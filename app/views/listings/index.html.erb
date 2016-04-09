@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+<div class="center">
+
+<h1>Compatibilitați</h1>
+
+<table class="table table-condensed">
+  <thead>
+   <tr class="info">
+      <th>Code</th>
+      <th>Marca</th>
+      <th>Model</th>
+      <th>An fabricatie</th>
+      <th>Denumire</th>
+      <th>Foto</th>
+      <th>Dimensiune</th>
+      <th>Tip adapt</th>
+      <th>Pret</th>
+      <th></th>
+       <th></th>
+       <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @listings.each do |listing| %>
+     
+      	
+          <tr>
+        	<td><%= listing.code %></td>
+        	<td><%= listing.marca %></td>
+        	<td><%= listing.model %></td>
+        	<td><%= listing.anfabricatie %></td>
+        	<td><%= listing.denumire %></td>
+        	<td><%= image_tag listing.image.url(:medium) %></td>
+        	<td><%= listing.dimensiune %></td>
+        	<td><%= listing.tipadpt %></td>
+        	<td><%= listing.price %></td>
+        	<td><%= link_to 'Show', listing, class: "btn btn-link" %></td>
+        	<td><%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-link" %></td>
+        	<td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
+        </tr>
+      
+    <% end %>
+  </tbody>
+</table>
+</div>
+<br>
+
+<%= link_to 'New Listing', new_listing_path, class: "btn btn-info" %>
